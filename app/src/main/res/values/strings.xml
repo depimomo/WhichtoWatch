@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Which to Watch</string>
+
+    <!-- ACTIVITY's TITLE HERE -->
+    <string name="activity_title_main">Pop Movies</string>
+    <string name="activity_title_settings">Settings</string>
+
+    <!-- ACTION MENU NAME HERE -->
+    <string name="action_settings">Settings</string>
+
+    <!-- SETTINGS MENU, KEY, AND VALUES HERE -->
+    <string name="pref_movie_category_title">Movie Section</string>
+    <string name="pref_movie_sortby_key">movieSortBy</string>
+    <string name="pref_movie_sortby_title">Sort By</string>
+    <string name="pref_movie_sortby_title_dialog">Which sort ?</string>
+    <string-array name="pref_movie_sortby_option_name">
+        <item>Popular</item>
+        <item>Now Playing</item>
+        <item>Upcoming</item>
+    </string-array>
+    <string-array name="pref_movie_sortby_option_values">
+        <item>popular</item>
+        <item>now_playing</item>
+        <item>upcoming</item>
+    </string-array>
+    <string name="pref_movie_sortby_option_default_name">Popular</string>
+    <string name="pref_movie_sortby_option_default_value">popular</string>
+
+
+    <!-- DEFAUL STRING HERE -->
+    <string name="default_text_view">TextView</string>
+</resources>

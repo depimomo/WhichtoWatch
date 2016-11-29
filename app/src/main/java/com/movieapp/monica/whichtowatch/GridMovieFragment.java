@@ -69,10 +69,9 @@ public class GridMovieFragment extends Fragment {
                 }
 
                 //TODO ganti jadi ArrayAdapter of MovieObject
-                ArrayAdapter<String> adp = new ArrayAdapter<String>(
+                MovieArrayAdapter adp = new MovieArrayAdapter (
                     getActivity(),
-                    android.R.layout.simple_list_item_1,
-                    arrString
+                    listMovies
                 );
                 grdMovieList.setAdapter(adp);
                 //ENDOFTODO

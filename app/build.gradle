@@ -19,11 +19,15 @@ android {
     }
 
     buildTypes.each {
-        it.buildConfigField ('String', 'MOVIE_DB_API_KEY_V3', '"YOUR_API_KEY_HERE"')
+        it.buildConfigField ('String', 'MOVIE_DB_API_KEY_V3', '"YOUR_API_KEY"')
     }
 
     lintOptions {
         abortOnError false
+    }
+
+    repositories {
+        mavenCentral()
     }
 }
 
@@ -39,6 +43,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

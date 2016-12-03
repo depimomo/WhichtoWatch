@@ -3,7 +3,7 @@
     <string name="app_name">Which to Watch</string>
 
     <!-- ACTIVITY's TITLE HERE -->
-    <string name="activity_title_main">Pop Movies</string>
+    <string name="activity_title_main">Which to Watch</string>
     <string name="activity_title_settings">Settings</string>
 
     <!-- ACTION MENU NAME HERE -->
@@ -30,4 +30,8 @@
 
     <!-- DEFAUL STRING HERE -->
     <string name="default_text_view">TextView</string>
+    <string name="action_about">About</string>
+    <string name="monica_devi_kristiadi">Monica Devi Kristiadi</string>
+    <string name="fortuna_favi_fortus">Fortuna Favi Fortus</string>
+    <string name="about_me">About Me</string>
 </resources>

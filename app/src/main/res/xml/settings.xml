@@ -9,6 +9,7 @@
             android:dialogTitle="@string/pref_movie_sortby_title_dialog"
             android:entries="@array/pref_movie_sortby_option_name"
             android:entryValues="@array/pref_movie_sortby_option_values"
+            android:summary="%s"
             android:defaultValue="@string/pref_movie_sortby_option_default_value" />
 
     </PreferenceCategory>

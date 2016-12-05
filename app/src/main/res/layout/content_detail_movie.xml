@@ -8,10 +8,78 @@
     tools:context="com.movieapp.monica.whichtowatch.DetailMovie"
     tools:showIn="@layout/activity_detail_movie">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/dummy"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="35dp"
+            android:id="@+id/poster_detail" />
+
+        <TextView
+            android:text="@string/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/judul_detail"
+            android:textColor="#2c3e50"
+            android:textSize="20sp"
+            android:gravity="left"
+            android:maxWidth="180sp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@id/poster_detail"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:text="@string/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tahun_detail"
+            android:layout_below="@id/judul_detail"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/poster_detail"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:text="@string/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/durasi_detail"
+            android:layout_below="@+id/tahun_detail"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/poster_detail"
+            android:layout_marginLeft="10dp" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bintang_detail"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:numStars="5"
+            android:layout_below="@+id/durasi_detail"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/poster_detail"
+            android:layout_marginLeft="10dp"
+            android:rating="5" />
+
+        <TextView
+            android:text="@string/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating_detail"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="12sp"
+            android:layout_alignBottom="@+id/bintang_detail"
+            android:layout_toRightOf="@+id/bintang_detail"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_alignTop="@+id/bintang_detail" />
+
+    </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>

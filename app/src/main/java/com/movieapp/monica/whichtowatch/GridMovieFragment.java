@@ -44,8 +44,15 @@ public class GridMovieFragment extends Fragment {
 
                 MovieObject obj = (MovieObject) grdMovieList.getItemAtPosition(i);
 
+                int movieId = obj.getMovieId();
+
+                Bundle b = new Bundle();
+                b.putInt("id_film", movieId);
 
                 Intent y = new Intent(getActivity(), DetailMovie.class);
+
+                y.putExtras(b);
+
                 startActivity(y);
 
                 /*Toast
@@ -74,8 +81,7 @@ public class GridMovieFragment extends Fragment {
             int     exitValue = ipProcess.waitFor();
             return (exitValue == 0);
 
-        } catch (IOException e)          { e.printStackTrace(); }
-        catch (InterruptedException e) { e.printStackTrace(); }
+        } catch (IOException | InterruptedException e)          { e.printStackTrace(); }
 
         return false;
     }
@@ -115,7 +121,7 @@ public class GridMovieFragment extends Fragment {
                 grdMovieList.setAdapter(adp);
                 //ENDOFTODO
 
-                Log.d(LOG_TAG, "Total Film: " + listMovies.size());
+                //Log.d(LOG_TAG, "Total Film: " + listMovies.size());
                 
             }
 
@@ -125,4 +131,6 @@ public class GridMovieFragment extends Fragment {
             }
         });
     }
+
+
 }

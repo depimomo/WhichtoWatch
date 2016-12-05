@@ -46,6 +46,9 @@ public class MovieObject {
 
     @SerializedName("vote_average")
     private Double movieVoteAverage;
+
+    @SerializedName("runtime")
+    private int runtime;
     
     public String getMoviePosterPath() {
         return moviePosterPath;
@@ -157,5 +160,13 @@ public class MovieObject {
 
     public void setMovieVoteAverage(Double movieVoteAverage) {
         this.movieVoteAverage = movieVoteAverage;
+    }
+
+    public int getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(int runtime) {
+        this.runtime = runtime;
     }
 }

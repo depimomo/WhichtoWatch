@@ -10,5 +10,5 @@ public interface MovieInterfaces {
     Call<MovieData> getMoviesBySort(@Path("sortBy") String sortBy, @Query("api_key") String apiKey);
 
     @GET("movie/{id}")
-    Call<MovieData> getMoviesById(@Path("id") int id, @Query("api_key") String apiKey);
+    Call<MovieObject> getMoviesById(@Path("id") int id, @Query("api_key") String apiKey);
 }

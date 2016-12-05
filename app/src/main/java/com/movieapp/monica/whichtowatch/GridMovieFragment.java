@@ -1,5 +1,6 @@
 package com.movieapp.monica.whichtowatch;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -41,13 +42,17 @@ public class GridMovieFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                MovieObject tes = (MovieObject) grdMovieList.getItemAtPosition(i);
+                MovieObject obj = (MovieObject) grdMovieList.getItemAtPosition(i);
 
-                Toast
+
+                Intent y = new Intent(getActivity(), DetailMovie.class);
+                startActivity(y);
+
+                /*Toast
                         .makeText(getContext(),
                                         "Release date : " + tes.getMovieReleaseDate(),
                                         Toast.LENGTH_SHORT)
-                        .show();
+                        .show();*/
             }
         });
 

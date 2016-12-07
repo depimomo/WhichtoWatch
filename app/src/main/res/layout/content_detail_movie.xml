@@ -17,8 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/dummy"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginLeft="@dimen/side35"
+            android:layout_marginTop="@dimen/side35"
             android:id="@+id/poster_detail" />
 
         <TextView
@@ -29,7 +29,7 @@
             android:textColor="#2c3e50"
             android:textSize="20sp"
             android:gravity="left"
-            android:maxWidth="180sp"
+            android:layout_marginRight="@dimen/side35"
             android:layout_marginTop="35dp"
             android:layout_toRightOf="@id/poster_detail"
             android:layout_marginLeft="10dp"/>
@@ -79,6 +79,51 @@
             android:layout_marginLeft="18dp"
             android:layout_marginStart="18dp"
             android:layout_alignTop="@+id/bintang_detail" />
+
+        <TextView
+            android:text="Summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/summary_title"
+            android:layout_below="@+id/poster_detail"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/side35"
+            android:textSize="18sp"
+            android:textColor="#2c3e50"/>
+
+        <TextView
+            android:text="@string/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/summary"
+            android:layout_below="@+id/summary_title"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spaceVideo"
+            android:layout_alignTop="@+id/summary"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/summary"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:text="Videos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/video_judul"
+                android:layout_below="@+id/spaceVideo"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="@dimen/side35"
+                android:textSize="18sp"
+                android:textColor="#2c3e50"/>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

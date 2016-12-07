@@ -1,14 +1,14 @@
 package com.movieapp.monica.whichtowatch;
 
-        import android.app.Activity;
-        import android.util.Log;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.ArrayAdapter;
-        import android.widget.ImageView;
-        import java.util.List;
-        import com.squareup.picasso.Picasso;
+import android.app.Activity;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import java.util.List;
+import com.squareup.picasso.Picasso;
 
 
 public class MovieArrayAdapter extends ArrayAdapter<MovieObject> {

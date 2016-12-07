@@ -28,6 +28,7 @@ public class DetailMovie extends AppCompatActivity {
     TextView tahun_detail;
     TextView durasi_detail;
     TextView rating_detail;
+    TextView summary;
     RatingBar bintang_detail;
     CollapsingToolbarLayout collapsingToolbar;
     ImageView poster_detail;
@@ -100,7 +101,11 @@ public class DetailMovie extends AppCompatActivity {
 
                 poster_detail = (ImageView) findViewById(R.id.poster_detail);
                 String imageUrl = "http://image.tmdb.org/t/p/w154/";
-                Picasso.with(getBaseContext()).load(imageUrl + resp.body().getMoviePosterPath()).into(poster_detail);
+                Picasso.with(getBaseContext())
+                        .load(imageUrl + resp.body().getMoviePosterPath()).into(poster_detail);
+
+                summary = (TextView) findViewById(R.id.summary);
+                summary.setText(resp.body().getMovieOverview());
 
             }
 

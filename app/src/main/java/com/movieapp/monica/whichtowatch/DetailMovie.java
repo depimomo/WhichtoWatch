@@ -1,6 +1,5 @@
 package com.movieapp.monica.whichtowatch;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -32,6 +32,7 @@ public class DetailMovie extends AppCompatActivity {
     RatingBar bintang_detail;
     CollapsingToolbarLayout collapsingToolbar;
     ImageView poster_detail;
+    LinearLayout spaceVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class DetailMovie extends AppCompatActivity {
         int id_film = b.getInt("id_film");
 
         updateDetailMovie(id_film);
+        updateDetailVideo(id_film);
 
         collapsingToolbar
                 .setCollapsedTitleTextAppearance(R.style.TextAppearance_MyApp_Title_Collapsed);
@@ -67,6 +69,7 @@ public class DetailMovie extends AppCompatActivity {
     private void updateDetailMovie(int movieId) {
         MovieDataFetcher theFetcher = new MovieDataFetcher();
         MovieInterfaces theInterface = theFetcher.getFetcher().create(MovieInterfaces.class);
+
         Call<MovieObject> callMovieObject = theInterface
                 .getMoviesById(movieId, BuildConfig.MOVIE_DB_API_KEY_V3);
 
@@ -112,6 +115,66 @@ public class DetailMovie extends AppCompatActivity {
             @Override
             public void onFailure(Call<MovieObject> call, Throwable t) {
                 Log.e("Gagal nih", t.toString());
+            }
+        });
+    }
+
+    private void updateDetailVideo(int movieId) {
+        MovieDataFetcher theFetcher = new MovieDataFetcher();
+        MovieInterfaces theInterface = theFetcher.getFetcher().create(MovieInterfaces.class);
+        Call<MovieVideoData> callMovieVideoData = theInterface
+                .getMovieVideo(movieId, BuildConfig.MOVIE_DB_API_KEY_V3);
+
+        callMovieVideoData.enqueue(new Callback<MovieVideoData>() {
+            @Override
+            public void onResponse(Call<MovieVideoData> call, Response<MovieVideoData> resp) {
+
+                Log.d("hasil get data result", String.valueOf(resp.body().getDataResult()));
+                //assert resp != null;
+                List<MovieVideoObject> listMoviesVideo = resp.body().getDataResult();
+
+                //assert listMoviesVideo.size() != 0;
+
+                //TODO errornya di sini
+
+                //final VideoArrayAdapter adp = new VideoArrayAdapter(getParent(),listMoviesVideo);
+
+                /*for(Integer i = 0; i<adp.getCount(); i ++)
+                {
+                    View item = adp.getView(i, null, null);
+
+                    final Integer x = i;
+
+                    spaceVideo = (LinearLayout) findViewById(R.id.spaceVideo);
+                    spaceVideo.setClickable(true);
+                    spaceVideo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            String baseYoutubeURL = "https://www.youtube.com/watch?v=";
+                            String theUrl = baseYoutubeURL + adp.getItem(x).getKey();
+
+                            startActivity(
+                                    new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl))
+                            );
+                        }
+                    });
+
+                    spaceVideo.addView(item);
+                    spaceVideo.setVisibility(View.VISIBLE);
+                }
+
+
+
+
+                //ENDOFTODO
+
+                //Log.d(LOG_TAG, "Total Film: " + listMovies.size());*/
+
+            }
+
+            @Override
+            public void onFailure(Call<MovieVideoData> call, Throwable t) {
+                Log.e("Gagal ambil video", t.toString());
             }
         });
     }

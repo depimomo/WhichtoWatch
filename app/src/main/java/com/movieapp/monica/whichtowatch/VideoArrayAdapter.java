@@ -1,16 +1,11 @@
 package com.movieapp.monica.whichtowatch;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-
-import com.squareup.picasso.Picasso;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -30,7 +25,7 @@ public class VideoArrayAdapter extends ArrayAdapter<MovieVideoObject> {
                     .inflate(R.layout.fragment_videos, parent, false);
         }
 
-        ImageButton buttonVid = (ImageButton) convertView.findViewById(R.id.videoButton);
+        /*ImageButton buttonVid = (ImageButton) convertView.findViewById(R.id.videoButton);
 
         buttonVid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +34,11 @@ public class VideoArrayAdapter extends ArrayAdapter<MovieVideoObject> {
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(baseYoutube));
                 getContext().startActivity(i);
             }
-        });
+        });*/
+
+        TextView trailerText = (TextView) convertView.findViewById(R.id.descVideo);
+        assert obj != null;
+        trailerText.setText(obj.getName());
 
         return convertView;
     }

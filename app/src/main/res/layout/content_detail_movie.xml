@@ -103,22 +103,21 @@
             android:layout_marginTop="10dp"
             android:text="@string/loading" />
 
+
         <LinearLayout
             android:id="@+id/spaceVideo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/summary"
             android:layout_below="@+id/summary"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/video_judul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/summary"
                 android:layout_marginLeft="@dimen/side35"
                 android:layout_marginTop="20dp"
                 android:text="Videos"
@@ -126,6 +125,7 @@
                 android:textSize="18sp" />
 
         </LinearLayout>
+
 
     </RelativeLayout>
 

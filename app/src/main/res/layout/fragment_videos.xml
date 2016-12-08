@@ -13,7 +13,8 @@
         android:layout_marginLeft="@dimen/side35"
         android:layout_marginTop="10dp"
         android:layout_weight="1"
-        android:minHeight="75dp"
+        android:minHeight="60dp"
+        android:minWidth="55dp"
         app:srcCompat="@mipmap/videoplayer" />
 
     <TextView

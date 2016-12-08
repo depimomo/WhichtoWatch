@@ -64,6 +64,9 @@ public class DetailMovie extends AppCompatActivity {
         collapsingToolbar
                 .setExpandedTitleTextAppearance(R.style.TextAppearance_MyApp_Title_Expanded);
         //Log.d("tesssss", String.valueOf(b.getInt("id_film")));
+
+        //TODO ADDITIONAL HERE 01
+        spaceVideo = (LinearLayout) findViewById(R.id.spaceVideo);
     }
 
     private void updateDetailMovie(int movieId) {
@@ -133,11 +136,16 @@ public class DetailMovie extends AppCompatActivity {
                 //assert resp != null;
                 List<MovieVideoObject> listMoviesVideo = resp.body().getDataResult();
 
-                //assert listMoviesVideo.size() != 0;
+                assert listMoviesVideo.size() != 0;
 
                 //TODO errornya di sini
 
-                //final VideoArrayAdapter adp = new VideoArrayAdapter(getParent(),listMoviesVideo);
+                final VideoArrayAdapter adp = new VideoArrayAdapter(DetailMovie.this, listMoviesVideo);
+
+                for (Integer i = 0; i < adp.getCount(); i++) {
+                    View item = adp.getView(i, null, null);
+                    spaceVideo.addView(item);
+                }
 
                 /*for(Integer i = 0; i<adp.getCount(); i ++)
                 {

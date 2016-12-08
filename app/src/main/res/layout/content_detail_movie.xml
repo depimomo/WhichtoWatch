@@ -12,7 +12,8 @@
         android:id="@+id/rellayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin">
 
         <ImageView
             android:id="@+id/poster_detail"
@@ -120,12 +121,33 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/side35"
                 android:layout_marginTop="20dp"
-                android:text="Videos"
+                android:text="@string/videos"
                 android:textColor="#2c3e50"
                 android:textSize="18sp" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/spaceReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spaceVideo"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/review_judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side35"
+                android:layout_marginTop="20dp"
+                android:text="@string/reviews"
+                android:textColor="#2c3e50"
+                android:textSize="18sp" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

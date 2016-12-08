@@ -1,13 +1,11 @@
 package com.movieapp.monica.whichtowatch;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -24,8 +22,14 @@ public class ReviewArrayAdapter extends ArrayAdapter<MovieReviewObject> {
 
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext())
-                    .inflate(R.layout.fragment_videos, parent, false);
+                    .inflate(R.layout.fragment_review, parent, false);
         }
+
+        //TODO set data here
+        TextView tvwName = (TextView) convertView.findViewById(R.id.namaReview);
+        TextView tvwDesc = (TextView) convertView.findViewById(R.id.isiReview);
+        tvwName.setText(obj.getDataAuthor());
+        tvwDesc.setText(obj.getDataContent());
 
         return convertView;
     }

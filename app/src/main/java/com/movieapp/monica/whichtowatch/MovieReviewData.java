@@ -17,7 +17,8 @@ public class MovieReviewData {
     @SerializedName("total_results")
     private Integer dataTotalResults;
 
-    @SerializedName("result")
+    //TODO change SerializedName from result to results
+    @SerializedName("results")
     private List<MovieReviewObject> dataResult;
 
     public Integer getDataId() {

@@ -127,4 +127,6 @@
     <string name="minutes">" Minutes"</string>
     <string name="per10">/10</string>
     <string name="loading">Loading...</string>
+    <string name="videos">Videos</string>
+    <string name="reviews">Reviews</string>
 </resources>

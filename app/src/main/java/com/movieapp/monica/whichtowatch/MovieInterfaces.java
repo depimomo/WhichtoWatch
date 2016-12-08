@@ -15,5 +15,7 @@ public interface MovieInterfaces {
     @GET("movie/{id}/videos")
     Call<MovieVideoData> getMovieVideo(@Path("id") int id, @Query("api_key") String apiKey);
 
-    //api.themoviedb.org/3/movie/550/videos?api_key=df7934f249ad19ef751a3c7ae05883e7&language=en-US
+    @GET("movie/{id}/reviews")
+    Call<MovieReviewData> getMovieReview(@Path("id") int id, @Query("api_key") String apiKey);
+
 }
